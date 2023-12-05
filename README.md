@@ -21,7 +21,6 @@ Hello, this is backend Fishery application made by Capstone Team CH2-PS246
 | /api/marketplace/add-post | POST	 | username, userProfilePhoto, title, description, location, phoneNumber, price, photo  | POST request for add post on marketplace |
 | /api/marketplace/posts/:post_id/add-comment | POST	| username, comment | POST request for add comment on post |
 | /api/marketplace/posts | GET	| - | GET request to retrieve all post |
-
 | /api/home/fish-cultivation-nila | GET	| - | GET request to retrieve fish cultivation Nila |
 | /api/home/fish-cultivation-mujaer | GET	| - | GET request to retrieve fish cultivation Mujaer |
 | /api/home/fish-cultivation-nila/cara-budi-daya | GET	| - | GET request to retrieve cultivation of fish Nila |
