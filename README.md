@@ -6,7 +6,7 @@ Hello, this is backend Fishery application made by Capstone Team CH2-PS246
 |  Name | Bangkit ID | Contacts |
 | ------------ | ------------ | ------------ |
 | Ibnu Rizal Khusaini | C131BSY4072	 | [Github]() & [Linkedin]()  |
-| Ade Chintya Alfiana Halalutu | C182BSX3246	| [Github]() & [Linkedin]() |
+| Ade Chintya Alfiana Halalutu | C182BSX3246	| [Github](https://github.com/chintya3) & [Linkedin](https://www.linkedin.com/in/ade-chintya-alfiana-halalutu-663534284/) |
 
 
 # Endpoint
