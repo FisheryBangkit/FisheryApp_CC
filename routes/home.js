@@ -7,49 +7,49 @@ const dataIkan = {
     id: 1,
     caraBudidaya: {
       id: 1,
-      pemilihanKolam: 'Kolam lele',
-      pemilihanBenih: 'Benih lele',
-      pemeliharaan: 'Pemeliharaan lele',
-      panen: 'Panen lele'
+      pemilihanKolam: 'https://kolamterpal.net/7-jenis-kolam-ikan-lele/',
+      pemilihanBenih: 'https://kolamterpal.net/7-jenis-kolam-ikan-lele/',
+      pemeliharaan: 'https://kolamterpal.net/7-jenis-kolam-ikan-lele/',
+      panen: 'https://kolamterpal.net/7-jenis-kolam-ikan-lele/'
     },
-    rekomendasiPakan: 'Rekomendasi Pakan lele',
-    penyakit: 'Penyakit lele'
+    rekomendasiPakan: 'https://kolamterpal.net/7-jenis-kolam-ikan-lele/',
+    penyakit: 'https://kolamterpal.net/7-jenis-kolam-ikan-lele/'
   },
   mujair: {
     id: 2,
     caraBudidaya: {
       id: 2,
-      pemilihanKolam: 'Kolam mujair',
-      pemilihanBenih: 'Benih mujair',
-      pemeliharaan: 'Pemeliharaan mujair',
-      panen: 'Panen mujair'
+      pemilihanKolam: 'link kolam mujair',
+      pemilihanBenih: 'link benih mujair',
+      pemeliharaan: 'link pemeliharaan mujair',
+      panen: 'link panen mujair'
     },
-    rekomendasiPakan: 'Rekomendasi Pakan mujair',
-    penyakit: 'Penyakit mujair'
+    rekomendasiPakan: 'link rekomendasi pakan mujair',
+    penyakit: 'link penyakit mujair'
   },
   patin: {
     id: 3,
     caraBudidaya: {
       id: 3,
-      pemilihanKolam: 'Kolam patin',
-      pemilihanBenih: 'Benih patin',
-      pemeliharaan: 'Pemeliharaan patin',
-      panen: 'Panen patin'
+      pemilihanKolam: 'link kolam patin',
+      pemilihanBenih: 'link benih patin',
+      pemeliharaan: 'link pemeliharaan patin',
+      panen: 'link panen patin'
     },
-    rekomendasiPakan: 'Rekomendasi Pakan patin',
-    penyakit: 'Penyakit patin'
+    rekomendasiPakan: 'link rekomendasi pakan patin',
+    penyakit: 'link penyakit patin'
   },
   gurame: {
     id: 4,
     caraBudidaya: {
       id: 4,
-      pemilihanKolam: 'Kolam gurame',
-      pemilihanBenih: 'Benih gurame',
-      pemeliharaan: 'Pemeliharaan gurame',
-      panen: 'Panen gurame'
+      pemilihanKolam: 'link kolam gurame',
+      pemilihanBenih: 'link benih gurame',
+      pemeliharaan: 'link pemeliharaan gurame',
+      panen: 'link panen gurame'
     },
-    rekomendasiPakan: 'Rekomendasi Pakan gurame',
-    penyakit: 'Penyakit gurame'
+    rekomendasiPakan: 'link rekomendasi pakan gurame',
+    penyakit: 'link penyakit gurame'
   }
 };
 
@@ -75,38 +75,50 @@ router.get('/ikan/:nama/cara-budidaya', (req, res) => {
 
 // Endpoint untuk submenu pemilihan kolam ikan
 router.get('/ikan/:nama/cara-budidaya/pemilihan-kolam', (req, res) => {
-  const ikan = req.params.nama;
-  res.json({ pemilihanKolam: dataIkan[ikan].caraBudidaya.pemilihanKolam });
+  const { nama } = req.params;
+  const kolamLink = dataIkan[nama].caraBudidaya.pemilihanKolam;
+  
+  res.redirect(kolamLink); 
 });
 
 // Endpoint untuk submenu pemilihan benih ikan
 router.get('/ikan/:nama/cara-budidaya/pemilihan-benih', (req, res) => {
-  const ikan = req.params.nama;
-  res.json({ pemilihanBenih: dataIkan[ikan].caraBudidaya.pemilihanBenih });
+  const { nama } = req.params;
+  const benihLink = dataIkan[nama].caraBudidaya.pemilihanBenih;
+  
+  res.redirect(benihLink); 
 });
 
 // Endpoint untuk submenu pemeliharaan ikan
 router.get('/ikan/:nama/cara-budidaya/pemeliharaan', (req, res) => {
-  const ikan = req.params.nama;
-  res.json({ pemeliharaan: dataIkan[ikan].caraBudidaya.pemeliharaan });
+  const { nama } = req.params;
+  const pemeliharaanLink = dataIkan[nama].caraBudidaya.pemeliharaan;
+  
+  res.redirect(pemeliharaanLink); 
 });
 
 // Endpoint untuk submenu panen ikan
 router.get('/ikan/:nama/cara-budidaya/panen', (req, res) => {
-  const ikan = req.params.nama;
-  res.json({ panen: dataIkan[ikan].caraBudidaya.panen });
+  const { nama } = req.params;
+  const panenLink = dataIkan[nama].caraBudidaya.panen;
+  
+  res.redirect(panenLink); 
 });
 
 // Endpoint untuk submenu rekomendasi pakan ikan
 router.get('/ikan/:nama/rekomendasi-pakan', (req, res) => {
-  const ikan = req.params.nama;
-  res.json({ rekomendasiPakan: dataIkan[ikan].rekomendasiPakan });
+  const { nama } = req.params;
+  const pakanLink = dataIkan[nama].rekomendasiPakan;
+  
+  res.redirect(pakanLink); 
 });
 
 // Endpoint untuk submenu penyakit ikan
 router.get('/ikan/:nama/penyakit', (req, res) => {
-  const ikan = req.params.nama;
-  res.json({ penyakit: dataIkan[ikan].penyakit });
+  const { nama } = req.params;
+  const penyakitLink = dataIkan[nama].penyakit;
+  
+  res.redirect(penyakitLink); 
 });
 
   // Route: POST /api/home/upload-image
