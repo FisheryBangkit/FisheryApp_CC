@@ -25,5 +25,5 @@ Hello, this is backend Fishery application made by Capstone Team CH2-PS246
 | /api/home/ikan/:nama/cara-budidaya/panen | GET	| - | GET request to retrieve harvest for specified fish |
 | /api/home/ikan/:nama/rekomendasi-pakan | GET	| - | GET request to retrieve recommendation food for specified fish |
 | /api/home/ikan/:nama/penyakit | GET	| - | GET request to retrieve desease from specified fish |
-| /api/home/upload-image | POST	| - | POST request to upload fish photo |
+| /api/home/upload-image | POST	| photo | POST request to upload fish photo |
 
