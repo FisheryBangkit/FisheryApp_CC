@@ -31,18 +31,18 @@ const bucket = storage.bucket('nama_bucket_gcs');
   // Data komentar untuk postingan lainnya
   };
 
-// Route: GET /api/marketplace/search
-router.get('/search', (req, res) => {
-  const { query } = req.query;
-  
-  // Pencarian di data marketplacePosts berdasarkan query
-  const searchResults = marketplacePosts.filter(post =>
-    post.title.toLowerCase().includes(query.toLowerCase()) ||
-    post.description.toLowerCase().includes(query.toLowerCase())
-  );
-
-  res.status(200).json(searchResults);
-});
+  // Route: GET /api/marketplace/search
+  router.get('/search', (req, res) => {
+    const { query } = req.query;
+    
+    // Pencarian di data marketplacePosts berdasarkan query
+    const searchResults = marketplacePosts.filter(post =>
+      post.title.toLowerCase().includes(query.toLowerCase()) ||
+      post.description.toLowerCase().includes(query.toLowerCase())
+    );
+    
+    res.status(200).json(searchResults);
+  });
   
   // Route: POST /api/marketplace/add-post
   router.post('/add-post', (req, res) => {
@@ -72,7 +72,19 @@ router.get('/search', (req, res) => {
   
     res.status(200).json(marketplacePosts);
   });
+
+  // Route: GET /api/marketplace/:id
+  router.get('/:id', (req, res) => {
+    const postId = parseInt(req.params.id);
+    const post = marketplacePosts.find(post => post.id === postId);
   
+    if (!post) {
+      return res.status(404).json({ message: 'Post not found' });
+    }
+  
+    res.status(200).json(post);
+  });
+
   // Route: POST /api/marketplace/posts/:post_id/add-comment
   router.post('/posts/:post_id/add-comment', (req, res) => {
     const postId = req.params.post_id;
@@ -94,7 +106,17 @@ router.get('/search', (req, res) => {
     res.status(201).json(newComment);
   });
 
-//*****/
+  // Route: GET /api/marketplace/post/comment/:postid
+  router.get('/post/comment/:postid', (req, res) => {
+    const postId = req.params.postid;
+  
+    // Memeriksa apakah ada komentar untuk postingan dengan ID tertentu
+    if (!comments[postId]) {
+      return res.status(404).json({ error: 'Tidak ada komentar untuk postingan ini' });
+    }
+    const postComments = comments[postId];
+    res.status(200).json(postComments);
+    });
 
 
 
