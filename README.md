@@ -11,19 +11,65 @@ Hello, this is backend Fishery application made by Capstone Team CH2-PS246
 
 # Endpoint
 
-|  Endpoint | Method | Body Request (JSON) | Description |
-| ------------ | ------------ | ------------ | ------------ |
-| /api/marketplace/add-post | POST	 | username, userProfilePhoto, title, description, location, phoneNumber, price, photo  | POST request for add post on marketplace |
-| /api/marketplace/posts/:post_id/add-comment | POST	| username, comment | POST request for add comment on post |
-| /api/marketplace/posts | GET	| - | GET request to retrieve all post |
-| /api/home/ikan | GET	| - | GET request to retrieve menu of types fish |
-| /api/home/ikan/:nama | GET	| - | GET request to retrieve menu from specified fish |
-| /api/home/ikan/:nama/cara-budidaya | GET	| - | GET request to retrieve submenu from specified fish |
-| /api/home/ikan/:nama/cara-budidaya/pemilihan-kolam | GET	| - | GET request to retrieve selection pool for specified fish |
-| /api/home/ikan/:nama/cara-budidaya/pemilihan-benih | GET	| - | GET request to retrieve selection seed for specified fish |
-| /api/home/ikan/:nama/cara-budidaya/pemeliharaan | GET	| - | GET request to retrieve maintenance for specified fish |
-| /api/home/ikan/:nama/cara-budidaya/panen | GET	| - | GET request to retrieve harvest for specified fish |
-| /api/home/ikan/:nama/rekomendasi-pakan | GET	| - | GET request to retrieve recommendation food for specified fish |
-| /api/home/ikan/:nama/penyakit | GET	| - | GET request to retrieve desease from specified fish |
-| /api/home/upload-image | POST	| photo | POST request to upload fish photo |
+
+## Marketplace
+
+#### Create New Post
+
+```http
+  POST /marketplace/addPost
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `username` | `string` | **Required** |
+| `userProfilePhoto` | `string` | **Required** |
+| `title` | `string` | **Required** |
+| `description` | `string` | **Required** |
+| `location` | `string` | **Required** |
+| `phoneNumber` | `string` | **Required** |
+| `price` | `int` | **Required** |
+| `photo` | `string` | **Required** |
+
+#### GET All Post
+
+```http
+  GET /marketplace/allPost
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `-`      | `-` | **Retrieve all DATA on database posts** |
+
+#### GET Post By ID
+
+```http
+  GET /marketplace/posts/:idPost
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `-`      | `-` | **Retrieve DATA posts by ID** |
+
+
+#### Create New Comment on post
+
+```http
+  POST /:idPost/addComment
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `username` | `string` | **Required** |
+| `comment` | `string` | **Required** |
+
+#### GET Comment from POST
+
+```http
+  GET /comment/:idPost/getComment
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `-`      | `-` | **Retrieve Comment from Post** |
 
