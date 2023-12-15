@@ -14,8 +14,12 @@ const marketplaceRoutes = require('./routes/marketplace');
 
 app.use('/api/onboarding', onboardingRoutes);
 app.use('/api/profile', profileRoutes);
-app.use('/api/home', homeRoutes);
-app.use('/api/marketplace', marketplaceRoutes);
+app.use('/home', homeRoutes);
+//app.use('/api/marketplace', marketplaceRoutes);
+
+app.use("/marketplace", marketplaceRoutes);
+app.use("/comment", marketplaceRoutes);
+app.use("/home/scan", marketplaceRoutes);
 
 // Start server
 const PORT = process.env.PORT || 3000;
