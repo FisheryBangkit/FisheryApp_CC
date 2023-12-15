@@ -130,3 +130,13 @@ Hello, this is backend Fishery application made by Capstone Team CH2-PS246
 ```http
   GET /home/ikan/:nama/penyakit
 ```
+
+#### Post Image for Scan
+
+```http
+  POST /home/scan/uploadImage
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `image` | `image/file` | **Required** |
