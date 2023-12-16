@@ -34,7 +34,7 @@ Hello, this is backend Fishery application made by Capstone Team CH2-PS246
 #### GET All Post
 
 ```http
-  GET /marketplace/allPost
+  GET /marketplace/allPosts
 ```
 
 | Parameter | Type     | Description                       |
