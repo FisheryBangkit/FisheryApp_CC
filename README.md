@@ -29,7 +29,7 @@ Hello, this is backend Fishery application made by Capstone Team CH2-PS246
 | `location` | `string` | **Required** |
 | `phoneNumber` | `string` | **Required** |
 | `price` | `int` | **Required** |
-| `photo` | `string` | **Required** |
+| `photo` | `image/file` | **Required** |
 
 #### GET All Post
 
