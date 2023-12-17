@@ -7,12 +7,12 @@ const pathKey = path.resolve('./serviceaccountkey.json')
 
 // TODO: Sesuaikan konfigurasi Storage
 const gcs = new Storage({
-    projectId: 'submission-mgce-ibnurizal',
+    projectId: 'ch2-ps246',
     keyFilename: pathKey
 })
 
 // TODO: Tambahkan nama bucket yang digunakan
-const bucketName = 'money-tracker-ibnu'
+const bucketName = 'gambar-input-scan'
 const bucket = gcs.bucket(bucketName)
 
 function getPublicUrl(filename) {

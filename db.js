@@ -1,18 +1,11 @@
 const mysql = require('mysql');
 
-/* const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'capstone fix'
-}); */
-
 const createConnection = () => {
   return mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
+    host: '',
+    user: '',
     password: '',
-    database: 'capstone fix'
+    database: ''
   });
 };
 
