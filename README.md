@@ -1,5 +1,5 @@
-# FisheryApp - Cloud Computing
-Hello, this is backend Fishery application made by Capstone Team CH2-PS246
+# IWAKGO - Cloud Computing
+Hello, this is backend IWAKGO application made by Capstone Team CH2-PS246
 
 # Cloud Computing Team
 
