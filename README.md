@@ -62,6 +62,7 @@ Hello, this is backend Fishery application made by Capstone Team CH2-PS246
 | :-------- | :------- | :------------------------- |
 | `username` | `string` | **Required** |
 | `comment` | `string` | **Required** |
+| `photoProfile` | `string` | **Required** |
 
 #### GET Comment from POST
 
