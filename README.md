@@ -74,6 +74,16 @@ Hello, this is backend IWAKGO application made by Capstone Team CH2-PS246
 | :-------- | :------- | :-------------------------------- |
 | `-`      | `-` | **Retrieve Comment from Post** |
 
+#### GET Search posts from POST
+
+```http
+  GET /marketplace/search
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `title`      | `string` | **Retrieve the searched posts from Post** |
+
 
 
 ## Home
