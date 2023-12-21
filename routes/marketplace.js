@@ -20,10 +20,10 @@ router.get("/posts/:idPost", getPostById);
 const storageMulter = multer.memoryStorage();
 const uploadMulter = multer({ storage: storageMulter });
 
-router.post("/addPost", uploadMulter.single('photo'), imgUpload.uploadToGcs, async (req, res) => {
+router.post("/addPost", uploadMulter.single('photo'), imgUpload.uploadToGcsPost, async (req, res) => {
   const username = req.body.username
   const userProfilePhoto = req.body.userProfilePhoto
-  const date = new Date().toISOString().split("T")[0]
+  const date = new Date().toISOString()
   const description = req.body.description
   const title = req.body.title
   const location = req.body.location
@@ -54,38 +54,30 @@ router.post("/addPost", uploadMulter.single('photo'), imgUpload.uploadToGcs, asy
   }
 })
 
-// Route: GET /marketplace/search
-/* router.get('/search', (req, res) => {
-  const { username, title, price, description } = req.query;
+router.get('/search', (req, res) => {
+  try {
+    const { title } = req.query;
 
-  // Query untuk mencari data berdasarkan kriteria
-  const query = `
-    SELECT *
-    FROM posts
-    WHERE
-      username LIKE ? AND
-      title LIKE ? AND
-      price = ? AND
-      description LIKE ?
-  `;
+    // Adjusting query parameters accordingly
+    const params = [`%${title || ''}%`];
 
-  // Menyesuaikan parameter query dengan nilai yang sesuai
-  const params = [
-    `%${username || ''}%`,
-    `%${title || ''}%`,
-    price || '',
-    `%${description || ''}%`,
-  ];
+    // Query to search for data based on criteria
+    const query = `SELECT * FROM posts WHERE title LIKE ?`;
 
-  // Eksekusi query
-  database.runQuery(query, params, (err, rows, fields) => {
-    if (err) {
-      res.status(500).send({ message: err.sqlMessage });
-    } else {
-      res.send(rows);
-    }
-  });
-}); */
+    // Execute query
+    database.runQuery(query, params)
+      .then(rows => {
+        res.send(rows);
+      })
+      .catch(error => {
+        console.error(error);
+        res.status(500).send({ message: 'Internal Server Error' });
+      });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ message: 'Internal Server Error' });
+  }
+});
 
 router.post("/uploadImage", uploadMulter.single('image'), imgUpload.uploadToGcs, (req, res, next) => {
   const data = req.body
