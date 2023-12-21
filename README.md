@@ -9,6 +9,12 @@ Hello, this is backend IWAKGO application made by Capstone Team CH2-PS246
 | Ade Chintya Alfiana Halalutu | C182BSX3246	| [Github](https://github.com/chintya3) & [Linkedin](https://www.linkedin.com/in/ade-chintya-alfiana-halalutu-663534284/) |
 
 
+
+## IwakGo Backend Flow
+
+![App Screenshot](https://storage.googleapis.com/gambar-kolam/doc-cc/alur%20CC.png)
+
+
 # Endpoint
 
 
