@@ -12,7 +12,7 @@ Hello, this is backend IWAKGO application made by Capstone Team CH2-PS246
 
 ## IwakGo Backend Flow
 
-![App Screenshot](https://storage.googleapis.com/gambar-kolam/doc-cc/alur%20CC.png)
+![App Screenshot](https://storage.googleapis.com/gambar-kolam/doc-cc/alur%20CC-min.png)
 
 
 # Endpoint
